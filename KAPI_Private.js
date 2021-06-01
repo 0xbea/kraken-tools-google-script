@@ -38,11 +38,12 @@ function KAPI_OpenOrders(acc_id) {
     return acc_orders
 }
 
-function KAPI_AddOrder(acc_id, pair, type, ordertype, volume) {
+function KAPI_AddOrder(acc_id, pair, type, ordertype, volume, price) {
   parameters = ''
   parameters += 'pair=' + pair
   parameters += '&type=' + type
   parameters += '&ordertype=' + ordertype
   parameters += '&volume=' + volume
+  parameters += '&price=' + price
   acc_addorder_json = JSON.parse(KAPI_Private(acc_id, 'AddOrder', parameters))
 }
